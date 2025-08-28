@@ -93,8 +93,6 @@ class WordDefenseGame {
         
         if (this.lives > 0) {
             requestAnimationFrame(() => this.gameLoop());
-        } else {
-            this.endGame();
         }
     }
     
@@ -159,6 +157,11 @@ class WordDefenseGame {
                 }, 200);
                 
                 this.fallingWords.splice(index, 1);
+                
+                // 检查是否碰到3个单词，如果是则结束游戏
+                if (this.lives <= 0) {
+                    this.endGame();
+                }
             }
         });
     }
