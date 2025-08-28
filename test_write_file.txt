@@ -1,0 +1,1 @@
+This file was created using the write_file tool to test its functionality.
