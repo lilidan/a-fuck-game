@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 90vw;
+    max-width: 90vw;
+    height: 90vh;
+    max-height: 90vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3vw;
+    padding: 2vw;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+    color: white;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    font-size: 2.5vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    min-width: fit-content;
+}
+
+.stats {
+    display: flex;
+    gap: 2vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+    min-width: fit-content;
+}
+
+.game-area {
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 1.5vw;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2vh;
+}
+
+.player {
+    width: 5vw;
+    height: 5vw;
+    background: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+    transition: left 0.1s ease;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.falling-word {
+    position: absolute;
+    color: #ff4757;
+    font-weight: bold;
+    font-size: 1.5vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: rgba(255, 71, 87, 0.2);
+    padding: 0.5vw 1vw;
+    border-radius: 1.5vw;
+    backdrop-filter: blur(5px);
+    animation: fall linear;
+    min-width: 30px;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@keyframes fall {
+    from {
+        top: -5vh;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+.controls {
+    text-align: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.controls button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    border: none;
+    padding: 1.2vw 2.4vw;
+    margin: 0 1vw;
+    border-radius: 2.5vw;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 1.1vw;
+    min-width: 100px;
+    min-height: 40px;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+}
+
+.controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.instructions {
+    margin-top: 1.5vh;
+    font-size: 1.1vw;
+    opacity: 0.8;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4vw;
+    border-radius: 2vw;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 500px;
+}
+
+.game-over h2 {
+    font-size: 2.5vw;
+    margin-bottom: 2vh;
+    color: #ff6b6b;
+}
+
+.game-over button {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    padding: 1.2vw 2.4vw;
+    border-radius: 2.5vw;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2vh;
+    font-size: 1.2vw;
+    min-width: 120px;
+    min-height: 45px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1vh;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 5vw;
+    }
+    
+    .stats {
+        font-size: 3.5vw;
+        gap: 3vw;
+    }
+    
+    .player {
+        width: 8vw;
+        height: 8vw;
+    }
+    
+    .falling-word {
+        font-size: 3.5vw;
+        padding: 1vw 2vw;
+        border-radius: 3vw;
+    }
+    
+    .controls button {
+        padding: 2vw 4vw;
+        margin: 0 2vw;
+        border-radius: 5vw;
+        font-size: 3vw;
+        display: block;
+        width: 80%;
+        margin: 2vw auto;
+    }
+    
+    .instructions {
+        font-size: 3vw;
+    }
+    
+    .game-over h2 {
+        font-size: 5vw;
+    }
+    
+    .game-over {
+        padding: 6vw;
+        border-radius: 4vw;
+    }
+    
+    .game-over button {
+        padding: 2vw 4vw;
+        border-radius: 5vw;
+        font-size: 3.5vw;
+        width: 80%;
+    }
+}
+
+@media (max-height: 500px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .stats {
+        font-size: 0.9rem;
+        gap: 15px;
+    }
+    
+    .controls button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .instructions {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+}
