@@ -12,7 +12,7 @@ class WordDefenseGame {
         this.lives = 3;
         this.gameRunning = false;
         this.fallingWords = [];
-        this.gameSpeed = 2;
+        this.gameSpeed = 3;
         
         this.badWords = [
             'DAMN', 'HELL', 'CRAP', 'SHIT', 'FUCK', 'BITCH', 'ASS',
@@ -130,8 +130,8 @@ class WordDefenseGame {
                 this.score += 10;
                 this.updateUI();
                 
-                if (this.score > 0 && this.score % 100 === 0) {
-                    this.gameSpeed = Math.min(4, this.gameSpeed + 0.2);
+                if (this.score > 0 && this.score % 50 === 0) {
+                    this.gameSpeed = Math.min(5, this.gameSpeed + 0.3);
                 }
             }
         });
