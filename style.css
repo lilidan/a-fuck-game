@@ -110,7 +110,7 @@ body {
 }
 
 .controls button {
-    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
     border: none;
     padding: 1.2vw 2.4vw;
     margin: 0 1vw;
@@ -161,7 +161,7 @@ body {
 }
 
 .game-over button {
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
     border: none;
     padding: 1.2vw 2.4vw;
     border-radius: 2.5vw;
